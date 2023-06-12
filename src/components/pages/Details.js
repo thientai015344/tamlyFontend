@@ -92,7 +92,7 @@ class Details extends Component {
                                                         <div className="validate" />
                                                     </div>
                                                         <button className="btn  btn_normal" >
-                                                             <i className="fab fa-telegram-plane"></i>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
+                                                             <i className="fab fa-telegram-plane"/>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
                                                         </button>
                                                     </form>
                                                     </div>

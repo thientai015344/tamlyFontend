@@ -7,6 +7,10 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {InforProvider} from './components/Context'
 import {InforConSumer} from './components/Context'
 import {AuthContextProvider} from "./context/Authcontext"
+import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 ReactDOM.render(
 

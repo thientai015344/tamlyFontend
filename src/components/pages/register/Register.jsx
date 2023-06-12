@@ -9,6 +9,7 @@ export default function Register() {
   const password = useRef();
   const passwordAgain = useRef();
   const history = useHistory();
+  const phonenumber = useRef();
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -18,12 +19,13 @@ export default function Register() {
       const user = {
         username: username.current.value,
         email: email.current.value,
+        phonenumber: phonenumber.current.value,
         password: password.current.value,
       };
       try {
-        await axios.post("/auth/register", user);
+        console.log(user)
+        await axios.post("/api/create-new-user", user);
         history.push("/login");
-        console.log("why")
       } catch (err) {
         console.log(err);
       }
@@ -40,7 +42,7 @@ export default function Register() {
           </span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
+          <form className="loginBox">
             <input
               placeholder="Username"
               required
@@ -53,6 +55,13 @@ export default function Register() {
               ref={email}
               className="loginInput"
               type="email"
+            />
+            <input
+              placeholder="phonenumber"
+              required
+              ref={phonenumber}
+              className="loginInput"
+              type="phonenumber"
             />
             <input
               placeholder="Password"
@@ -69,7 +78,7 @@ export default function Register() {
               className="loginInput"
               type="password"
             />
-            <button className="loginButton" type="submit">
+            <button className="loginButton" onClick={handleClick} >
               Đăng kí
             </button>
             <button className="loginRegisterButton">Đăng nhập</button>

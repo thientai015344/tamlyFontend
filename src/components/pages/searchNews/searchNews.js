@@ -86,17 +86,17 @@ export default function SearchNews() {
                 <a href={article.link}>
                   <ul className="details">
                     <li>
-                      <i class="far fa-user"></i> &nbsp; {article.comp}
+                      <i  className="far fa-user"/> &nbsp; {article.comp}
                     </li>
                     <li>
                       {" "}
-                      <i class="far fa-calendar-alt"> &nbsp; </i>{" "}
+                      <i  className="far fa-calendar-alt"/>&nbsp;{" "}
                       {new Date(Date.parse(article.time)).toDateString()}
                     </li>
                     <li>
                       <ul>
                         <li>
-                          <i class="fas fa-tag"></i>
+                          <i  className="fas fa-tag"/>
                         </li>
                         <li>
                           <>&nbsp;{article.tag}</>
@@ -129,21 +129,21 @@ export default function SearchNews() {
               <div className="meta">
                 <div className="photo" style={{}} />
 
-                <div class="container">
-                <div class="row xamin-bg">
-                    <div class="col-sm-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 wow fadeInUp text-center">
+                <div  className="container">
+                <div  className="row xamin-bg">
+                    <div  className="col-sm-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 wow fadeInUp text-center">
                         <div>
-                            <div class="scroll-effect">
-                                <img style={{marginTop:'25px'}} src='assets/img-video/food.jpg' class="img-fluid img-one" alt="#" />
-                                <div class="main-video">
-                                    <div class="video-img">
-                                        <div class="consult-video video-btn">
-                                            <div class="btn-waves">
-                                                <div class="waves wave-1"></div>
-                                                <div class="waves wave-2"></div>
-                                                <div class="waves wave-3"></div>
+                            <div  className="scroll-effect">
+                                <img style={{marginTop:'25px'}} src='assets/img-video/food.jpg'  className="img-fluid img-one" alt="#" />
+                                <div  className="main-video">
+                                    <div  className="video-img">
+                                        <div  className="consult-video video-btn">
+                                            <div  className="btn-waves">
+                                                <div  className="waves wave-1"></div>
+                                                <div  className="waves wave-2"></div>
+                                                <div  className="waves wave-3"></div>
                                             </div>
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="iq-video popup-youtube"><i class="fa fa-play"></i></a>
+                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto"  className="iq-video popup-youtube"><i  className="fa fa-play"/></a>
                                         </div>
                                     </div>
                                 </div>
@@ -169,21 +169,21 @@ export default function SearchNews() {
               <div className="meta">
                 <div className="photo" style={{}} />
 
-                <div class="container">
-                <div class="row xamin-bg">
-                    <div class="col-sm-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 wow fadeInUp text-center">
+                <div  className="container">
+                <div  className="row xamin-bg">
+                    <div  className="col-sm-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 wow fadeInUp text-center">
                         <div>
-                            <div class="scroll-effect">
-                                <img style={{marginTop:'25px'}} src='assets/img-video/food.jpg' class="img-fluid img-one" alt="#" />
-                                <div class="main-video">
-                                    <div class="video-img">
-                                        <div class="consult-video video-btn">
-                                            <div class="btn-waves">
-                                                <div class="waves wave-1"></div>
-                                                <div class="waves wave-2"></div>
-                                                <div class="waves wave-3"></div>
+                            <div  className="scroll-effect">
+                                <img style={{marginTop:'25px'}} src='assets/img-video/food.jpg'  className="img-fluid img-one" alt="#" />
+                                <div  className="main-video">
+                                    <div  className="video-img">
+                                        <div  className="consult-video video-btn">
+                                            <div  className="btn-waves">
+                                                <div  className="waves wave-1"></div>
+                                                <div  className="waves wave-2"></div>
+                                                <div  className="waves wave-3"></div>
                                             </div>
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="iq-video popup-youtube"><i class="fa fa-play"></i></a>
+                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto"  className="iq-video popup-youtube"><i  className="fa fa-play"/></a>
                                         </div>
                                     </div>
                                 </div>

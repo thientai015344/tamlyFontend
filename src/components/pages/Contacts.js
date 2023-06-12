@@ -43,7 +43,7 @@ class Contacts extends Component {
                                 </div>
 
                                 <button className="btn  btn_normal mr5 mb3 mt3" onClick={this.test} >
-                                                <i className="fab fa-telegram-plane"></i>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
+                                                <i className="fab fa-telegram-plane"/>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
                                 </button>
                             </form>
                         </div>

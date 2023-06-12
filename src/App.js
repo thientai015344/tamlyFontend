@@ -14,38 +14,24 @@ import Home1 from "./components/pages/home/Home";
 import BMI from "./components/pages/BMI/BMI";
 import Profile from "./components/pages/profile/Profile";
 import Login from "./components/pages/login/Login";
+import Admin from "./components/pages/admin/admin";
 import Register from "./components/pages/register/Register";
 import Details from "./components/pages/Details";
 import Messenger from "./components/messenger/messenger";
-import { AuthContext } from "./context/Authcontext";
-import { useContext } from "react";
 import DetailsArticle from "./components/pages/DetailsArticle";
 
 function App() {
-  const { user } = useContext(AuthContext);
   return (
     <div>
       <Switch>
         <Route
           exact
           path="/"
-          component={
-            Home
-            // user ? Home : Login
-          }
-        />
-        <Route
-          path="/home"
-          component={
-            Home
-            // user? Home: Register
-          }
-        />
-        <Route
-          path="/register"
-          component={user ? <Redirect to="/" /> : Register}
-        />
-        <Route path="/login" component={user ? <Redirect to="/" /> : Login} />
+          component={ Home }/>
+        <Route path="/home" component={Home}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/login" component={Login} />
+        <Route path="/admin" component={Admin} />
         <Route path="/news" component={Home1} />
         <Route path="/BMI" component={BMI} />
         <Route path="/contacts" component={Contacts} />

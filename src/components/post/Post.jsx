@@ -121,7 +121,7 @@ export default function Post({ post }) {
         <span id="rightbarOnline"></span>
       </div>
                     <div className="media-body">
-                    <h6 className="mt-0">Chuyên Gia {<i style={{color:"#3AE7E1"}} class="fas fa-check-square"></i>}</h6>
+                    <h6 className="mt-0">Chuyên Gia {<i style={{color:"#3AE7E1"}}  className="fas fa-check-square"/>}</h6>
                     Bị bọ cạp cắn rất nguy hiểm, bạn nên đến gặp bác sĩ sớm để có cách điều trị hợp lý nhất
                     </div>
                 </div>
@@ -135,7 +135,7 @@ export default function Post({ post }) {
         <span id="rightbarOnline"></span>
       </div>
                     <div className="media-body">
-                    <h6 className="mt-0">Anh Duy {<i style={{color:"#3AE7E1", fontSize:"1.2em"}} class="fas fa-check-square"></i>}</h6>
+                    <h6 className="mt-0">Anh Duy {<i style={{color:"#3AE7E1", fontSize:"1.2em"}}  className="fas fa-check-square"/>}</h6>
                    bạn nên đi khám bác sĩ
                     </div>
                 </div>
@@ -150,7 +150,7 @@ export default function Post({ post }) {
                                                         <div className="validate" />
                                                     </div>
                                                         <button onClick={handleClickCMT} style={{width:"100px", height:"46px"}} className="btn  btn_normal" >
-                                                             <i style={{fontSize:"10px"}} className="fab fa-telegram-plane"></i> &nbsp; Gửi
+                                                             <i style={{fontSize:"10px"}} className="fab fa-telegram-plane"/> &nbsp; Gửi
                                                         </button>
                                                         </div>
                                                    

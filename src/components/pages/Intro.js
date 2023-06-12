@@ -21,11 +21,11 @@ export default function Intro(intro) {
                          <img src={Stress}  className="photo" />
                          <Link to={"/details"}>
                         <ul className="details">
-                          <li ><i class="far fa-user"></i><a href="#"> &nbsp; Anh Duy</a></li>
-                          <li > <i class="far fa-calendar-alt"> &nbsp; </i>Aug. 24, 2021</li>
+                          <li ><i  className="far fa-user"/><a href="#"> &nbsp; Anh Duy</a></li>
+                          <li > <i  className="far fa-calendar-alt"/>&nbsp;Aug. 24, 2021</li>
                           <li >
                             <ul>
-                            <li><i class="fas fa-tag"></i></li>
+                            <li><i  className="fas fa-tag"/></li>
                               <li><a href="#">CăngThẳng</a></li>
                               <li><a href="#">MệtMỏi</a></li>
                               <li><a href="#">LoNghĩ</a></li>

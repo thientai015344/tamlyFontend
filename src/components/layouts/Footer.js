@@ -91,13 +91,13 @@ function Footer(){
 
 				<div className='social'>
 					<Link to='#' className='social-link'>
-						<i class='fab fa-facebook-f'></i>
+						<i  className='fab fa-facebook-f'/>
 					</Link>
 					<Link to='#' className='social-link'>
-						<i class='fab fa-google-plus-g'></i>
+						<i  className='fab fa-google-plus-g'/>
 					</Link>
 					<Link to='#' className='social-link'>
-						<i class='fab fa-instagram'></i>
+						<i  className='fab fa-instagram'/>
 					</Link>
 				</div>
 

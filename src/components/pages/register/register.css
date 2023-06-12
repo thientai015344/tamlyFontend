@@ -53,6 +53,9 @@
 .loginInput:focus{
     outline: none;
 }
+button{
+  cursor: pointer;
+}
 
 .loginButton{
     height: 50px;

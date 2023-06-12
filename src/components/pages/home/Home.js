@@ -7,6 +7,7 @@ import Sidebar from "../../sidebar/Sidebar";
 import Feed from "../../feed/Feed";
 import Rightbar from "../../rightbar/Rightbar";
 import Navbar from "../../layouts/Navbar";
+import Chatbox from '../../chatbox/chatbox'
 import Footer from "../../layouts/Footer";
 import SearchLeft from "../../searchLeft/SearchLeft";
 
@@ -29,7 +30,7 @@ export default function Home() {
       <Feed></Feed>
       </div>
 
-      <div className='body1' style ={{ height: 'calc(100vh - 50px)',  position: 'sticky',top: '470px'}}className='col-md-1 mt150'>
+      <div className='body1 col-md-1 mt150' style ={{ height: 'calc(100vh - 50px)',  position: 'sticky',top: '470px'}}>
       <Link className='body1'  to={"/messenger"}>
 
 <button  style={{width:'76px', height:'75px'}}  className="btn btn-primary btn-jittery btn-circle">
@@ -41,6 +42,7 @@ export default function Home() {
 
       </div>
       </div>
+      <Chatbox></Chatbox>
     </>
   );
 }

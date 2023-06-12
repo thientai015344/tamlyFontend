@@ -13,6 +13,7 @@ import video1 from './images/fever.mp4'
 import video2 from './images/flu.mp4'
 import Navbar from '../layouts/Navbar'
 import Footer from '../layouts/Footer'
+import Chatbox from '../chatbox/chatbox'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
  
 
@@ -41,7 +42,7 @@ class Home extends Component {
               <video  playbackRate={speed} autoPlay muted loop>
                 <source className="embed-responsive" src={video} type="video/mp4" />
               </video>
-              <div class="color-overlay"></div>
+              <div  className="color-overlay"></div>
               <div className="carousel-caption">
              <h2 className="display-2">Sức Khỏe</h2>
              <h3>Tìm hiểu thông tin về sức khỏe</h3>
@@ -70,7 +71,7 @@ class Home extends Component {
          </div>
          <div className="carousel-item">
            <img src={logo6} />
-           <div class="color-overlay"></div>
+           <div  className="color-overlay"></div>
            <div className="carousel-caption">
              <h2 className="display-2">Tâm lý</h2>
              <h3>Xua tan vướng mắc tâm lý</h3>
@@ -82,7 +83,7 @@ class Home extends Component {
          </div>
          <div className="carousel-item cover">
            <img src={logo2} />
-           <div class="color-overlay1"></div>
+           <div  className="color-overlay1"></div>
            <div className="carousel-caption">
              <h2 className="display-2">Cộng đồng</h2>
              <h3>Giải quyết các vấn đề khó khăn</h3>
@@ -164,9 +165,9 @@ class Home extends Component {
                               <h6 className="font-weight-600 mt-3">
                                 Điều trị sốt xuất huyết
                               </h6>
-                              <h8 style={{fontSize:"16px"}} className="fs-15 font-weight-normal">
+                              <h6 style={{fontSize:"16px"}} className="fs-15 font-weight-normal">
                               là bệnh truyền nhiễm cấp tính, có thể gây thành dịch, do virus...
-                              </h8>
+                              </h6>
                             </div>
                             <div className="col-sm-6  mb-5 mb-sm-2">
                             <Link to={"/details"}>
@@ -182,9 +183,9 @@ class Home extends Component {
                               <h6 className="font-weight-600 mt-3">
                                 Mẹo chữa bệnh cảm cúm?
                               </h6>
-                              <h8 style={{fontSize:"16px"}}  className="fs-15 font-weight-normal">
+                              <h6 style={{fontSize:"16px"}}  className="fs-15 font-weight-normal">
                               Đến hẹn lại lên, mỗi năm vào mùa dịch cúm lây lan...
-                              </h8>
+                              </h6>
                             </div>
                           </div>
                           <div className="row mt-3">
@@ -608,7 +609,7 @@ class Home extends Component {
                   <div className="sent-message">Your message has been sent. Thank you!</div>
                 </div>
                 <div className="text-center"><button className="btn  btn_normal mr5 mb3 mt3" >
-                                                <i className="fab fa-telegram-plane"></i>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
+                                                <i className="fab fa-telegram-plane"/>  &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; Gửi
                                 </button></div>
               </form>
             </div>
@@ -621,8 +622,8 @@ class Home extends Component {
 
 
               
-
-
+        
+          <Chatbox></Chatbox>
           <Footer></Footer>
           </>
       
