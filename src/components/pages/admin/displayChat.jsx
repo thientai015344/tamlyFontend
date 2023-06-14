@@ -2,10 +2,12 @@ import { useRef, useEffect, useContext, useState } from "react";
 import "./admin.css";
 import socketIOClient from "socket.io-client";
 import axios from "axios";
+import avatagu from "./profile.png"
 const socketURL = process.env.SOCKET;
 
 export default function DisplayChat({ getId }) {
-  const [Idget, setIdget] = useState();
+  const [Idget, setIdget] = useState([]);
+  const contentRef = useRef(null);
   const [mess, setMess] = useState([]);
   const [message, setMessage] = useState('');
   const [id, setId] = useState();
@@ -19,12 +21,7 @@ export default function DisplayChat({ getId }) {
  
 
 
-  const scrollToBottom = () => {
-    if (scrollableRef.current) {
-      const scrollableElement = scrollableRef.current;
-      scrollableElement.scrollTop = scrollableElement.scrollHeight;
-    }
-  };
+  
 
     const handleKeyDown = (event) => {
         if (event.key === "Enter") {
@@ -55,7 +52,9 @@ export default function DisplayChat({ getId }) {
     socketRe.current.on('sendDataServer', dataGot => {
       setMess(oldMsgs => [...oldMsgs, dataGot.data]);
     });
-    scrollToBottom();
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
     handleClick()
     setIdget(getId);
   
@@ -70,7 +69,7 @@ export default function DisplayChat({ getId }) {
       if(text.current.value !== "") {
           const msg = {
             incoming_msg_id: Idadmin,
-            outcoming_msg_id: Idget,
+            outcoming_msg_id: Idget[0],
             content: text.current.value,
           }
           socketRe.current.emit('sendDataClient', msg)
@@ -83,20 +82,20 @@ export default function DisplayChat({ getId }) {
   return (
     <>
         <div className="titleTop">
-          <img className="avatachat" src="assets/images/news/covid-19.jpg" alt="" /> <h6>User3</h6>
+          <img className="avatachat" src={avatagu} alt="" /> <h6>{Idget[1]}</h6>
         </div>
         <div className="Contentchat">
 
           <div className="conttent">
             <div ref={scrollableRef} className="textmsg">
             {mess.map(item => {
-              if (item.incoming_msg_id === Idget) {
+              if (item.incoming_msg_id === Idget[0]) {
                 return (
                   <p className="botText" key={item.id}>
                     <span>{item.content}</span>
                   </p>
                 );
-              } else if (item.outcoming_msg_id === Idget) {
+              } else if (item.outcoming_msg_id === Idget[0]) {
                 return (
                   <p className="userText" key={item.id}>
                     <span>{item.content}</span>

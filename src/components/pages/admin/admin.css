@@ -60,6 +60,7 @@ ul.luchat {
 li.itemchat {
   cursor: pointer;
   background-color: #bfd6ed;
+  display: grid;
   margin: 10px 0;
   padding: 5px;
   border-radius: 3px;
@@ -143,6 +144,12 @@ button.btn_send {
 
 .textmsg {
   max-height: 80vh;
-  overflow: auto;
+  overflow-y: scroll;
+}
+
+span.textHistory {
+  padding-left: 9px;
+  font-size: 16px;
+  color: #897676;
 }
 

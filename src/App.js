@@ -16,8 +16,8 @@ import Profile from "./components/pages/profile/Profile";
 import Login from "./components/pages/login/Login";
 import Admin from "./components/pages/admin/admin";
 import Register from "./components/pages/register/Register";
+import Registeru from "./components/pages/registeru/Register";
 import Details from "./components/pages/Details";
-import Messenger from "./components/messenger/messenger";
 import DetailsArticle from "./components/pages/DetailsArticle";
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
           component={ Home }/>
         <Route path="/home" component={Home}/>
         <Route path="/register" component={Register}/>
+        <Route path="/admin/register" component={Registeru}/>
         <Route path="/login" component={Login} />
         <Route path="/admin" component={Admin} />
         <Route path="/news" component={Home1} />
@@ -39,7 +40,8 @@ function App() {
         <Route path="/profile/:username" component={Profile} />
         <Route path="/article/:id" component={DetailsArticle} />
         <Route path="/details" component={Details} />
-        <Route path="/messenger" component={Messenger} />
+ 
+
         <Route component={NotFoundPage} />
       </Switch>
     </div>
