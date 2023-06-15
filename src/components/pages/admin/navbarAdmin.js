@@ -10,6 +10,7 @@ import Admin from './admin'
 import Post from './post'
 import ChatU from './chatu'
 import Index from ".";
+import CreatChat from "./creatPost"
 
 
 
@@ -33,6 +34,7 @@ function NavbarAdmin(){
                         <li className="nav-item">
                             <Link className="nav-link active" to="/admin/chat">Chat</Link>
                         </li>
+                        
                     </ul>
                 </div>
                
@@ -46,8 +48,11 @@ function NavbarAdmin(){
         <Route exact path="/admin/post">
             <Post />
         </Route>
-        <Route path="/admin">
+        <Route exact path="/admin">
             <Index></Index>
+        </Route>
+        <Route exact path="/admin/creatPost">
+            <CreatChat></CreatChat>
         </Route>
     </Switch>        
     </Router>

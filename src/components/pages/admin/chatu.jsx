@@ -3,9 +3,10 @@ import "./admin.css";
 import DisplayChat from "./displayChat";
 import avatagu from "./profile.png"
 import axios from "axios";
-
+import socketIOClient from "socket.io-client";
 
 export default function ChatU() {
+  const socketURL = process.env.SOCKET;
 
   const [Id, setId] = useState([]);
   const [name, setname] = useState();
@@ -38,11 +39,8 @@ export default function ChatU() {
     socketRe.current.on('sendDataServer', dataGot => {
       setMess(oldMsgs => [...oldMsgs, dataGot.data]);
     });
-    scrollToBottom();
     handleClick()
-    setIdget(getId);
-  
-  
+
     return () => {
       socketRe.current.disconnect();
     };
@@ -50,9 +48,6 @@ export default function ChatU() {
     getAlluserChat();
   }, []);
 
-  const Checkmess =() =>{
-    
-  }
 
   const getAlluserChat = async () => {
   

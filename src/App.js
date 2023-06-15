@@ -20,7 +20,10 @@ import Registeru from "./components/pages/registeru/Register";
 import Details from "./components/pages/Details";
 import DetailsArticle from "./components/pages/DetailsArticle";
 
+
+
 function App() {
+  const value = sessionStorage.getItem('role');
   return (
     <div>
       <Switch>
@@ -28,6 +31,15 @@ function App() {
           exact
           path="/"
           component={ Home }/>
+          <Route
+            render={() =>
+              value === 'admin' ? (
+                <Redirect to="/admin" />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
         <Route path="/home" component={Home}/>
         <Route path="/register" component={Register}/>
         <Route path="/admin/register" component={Registeru}/>
@@ -40,6 +52,8 @@ function App() {
         <Route path="/profile/:username" component={Profile} />
         <Route path="/article/:id" component={DetailsArticle} />
         <Route path="/details" component={Details} />
+      
+
  
 
         <Route component={NotFoundPage} />

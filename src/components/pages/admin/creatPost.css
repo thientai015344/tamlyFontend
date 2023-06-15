@@ -1,0 +1,58 @@
+h1.taomoi {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+input#title {
+  border: 0;
+  height: 50px;
+  min-width: 400px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.left {
+  display: grid;
+}
+
+.right {
+  display: grid;
+}
+
+.choosImg{
+  display: none;
+}
+.top label{
+  cursor: pointer;
+}
+
+
+img.imgReview {
+  max-height: 100px;
+}
+
+textarea#discription {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+  min-height: 350px;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-focused {
+  min-height: 350px;
+}
+
+.btnd {
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
