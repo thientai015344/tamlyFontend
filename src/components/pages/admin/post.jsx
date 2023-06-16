@@ -42,7 +42,7 @@ function Post() {
           <td>{i + 1}</td>
           <td>bài 125/12/202325/12/2023</td>
           <td>
-            <img className="imgpost" src={avatagu} alt="anh 1" srcset="" />
+            <img className="imgpost" src={avatagu} alt="anh 1"  />
           </td>
           <td>25/12/2023</td>
           <td>

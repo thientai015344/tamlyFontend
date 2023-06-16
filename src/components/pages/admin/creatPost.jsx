@@ -5,19 +5,28 @@ import { getAllpost, createNewpostAdm } from './apipost';
 import "./creatPost.css"
 // react-bootstrap components
 
-function Cars() {
+function CreatePost() {
  
   const title = useRef();
   const [discription, setdiscription] = useState('')
-  const history = useHistory();
+  //const HIHU = useHistory();
   const [content, setcontent] = useState('')
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setSelectedFile(file);
     setPreviewURL(URL.createObjectURL(file));
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const base64String = reader.result;
+      setSelectedFile(base64String);
+    };
+
+    reader.readAsDataURL(file);
+
   };
 
 
@@ -30,15 +39,28 @@ function Cars() {
     setcontent(data);
   };
 
-
   const createNewPost = async (data) => {
+   if(title && discription && content){
+    let data ={
+      title: title.current.value,
+      discription: discription,
+      content:content,
+      userId: selectedFile
+    }
+    NewPost(data)
+   }
+  }
+
+
+  const NewPost = async (data) => {
+    console.log(data)
     try {
       let response = await createNewpostAdm(data);
       if (response && response.errCode !== 0) {
         alert(' Xe đã tồn tại ')
       } else {
         alert('Thêm xe thành công')
-        history.push('/admin/post')
+        //HIHU.push('/admin/post')
       }
     } catch (error) {
       console.log(error);
@@ -69,7 +91,7 @@ function Cars() {
             <input id='img' className='choosImg' type="file" onChange={handleFileChange} />
             {selectedFile && (
               <div>
-                <p>Selected file: {selectedFile.name}</p>
+                <p>Ảnh đã chọn: {selectedFile.name}</p>
                 <img className='imgReview' src={previewURL} alt="Preview" style={{ maxWidth: '100%' }} />
               </div>
             )}
@@ -112,4 +134,4 @@ function Cars() {
   );
 }
 
-export default Cars;
+export default CreatePost;

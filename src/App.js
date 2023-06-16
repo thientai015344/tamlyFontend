@@ -20,7 +20,7 @@ import Registeru from "./components/pages/registeru/Register";
 import Details from "./components/pages/Details";
 import DetailsArticle from "./components/pages/DetailsArticle";
 
-
+const value = sessionStorage.getItem('role');
 
 function App() {
   const value = sessionStorage.getItem('role');
@@ -31,15 +31,15 @@ function App() {
           exact
           path="/"
           component={ Home }/>
-          <Route
-            render={() =>
-              value === 'admin' ? (
-                <Redirect to="/admin" />
-              ) : (
-                <Redirect to="/" />
-              )
-            }
-          />
+        {/* <Route
+          render={() =>
+            value === 'admin' ? (
+              <Redirect to="/admin" />
+            ) : (
+              <Redirect to="/" />
+            )
+          }
+        /> */}
         <Route path="/home" component={Home}/>
         <Route path="/register" component={Register}/>
         <Route path="/admin/register" component={Registeru}/>

@@ -28,6 +28,15 @@ input#title {
 .choosImg{
   display: none;
 }
+label.chooseImg {
+  /* border: 1px solid; */
+  height: 33px;
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
 .top label{
   cursor: pointer;
 }
@@ -53,6 +62,12 @@ textarea#discription {
 
 .btnd {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-bottom: 20px;
+}
+
+textarea#discription, input#title {
+  outline: none;
+  border: none;
+  border-radius: 3px;
 }
