@@ -5,28 +5,19 @@ import { getAllpost, createNewpostAdm } from './apipost';
 import "./creatPost.css"
 // react-bootstrap components
 
-function CreatePost() {
+function Cars() {
  
   const title = useRef();
   const [discription, setdiscription] = useState('')
-  //const HIHU = useHistory();
+  const history = useHistory();
   const [content, setcontent] = useState('')
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+    setSelectedFile(file);
     setPreviewURL(URL.createObjectURL(file));
-
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      const base64String = reader.result;
-      setSelectedFile(base64String);
-    };
-
-    reader.readAsDataURL(file);
-
   };
 
 
@@ -39,28 +30,28 @@ function CreatePost() {
     setcontent(data);
   };
 
-  const createNewPost = async (data) => {
-   if(title && discription && content){
-    let data ={
+
+
+  const createNewPost = async () => {
+
+    let data = {
       title: title.current.value,
       discription: discription,
-      content:content,
-      userId: selectedFile
+      content: content,
+      img: selectedFile,
     }
-    NewPost(data)
-   }
+    NewPost(data);
+    
   }
 
-
   const NewPost = async (data) => {
-    console.log(data)
     try {
       let response = await createNewpostAdm(data);
       if (response && response.errCode !== 0) {
         alert(' Xe đã tồn tại ')
       } else {
         alert('Thêm xe thành công')
-        //HIHU.push('/admin/post')
+        history.push('/admin/post')
       }
     } catch (error) {
       console.log(error);
@@ -91,7 +82,7 @@ function CreatePost() {
             <input id='img' className='choosImg' type="file" onChange={handleFileChange} />
             {selectedFile && (
               <div>
-                <p>Ảnh đã chọn: {selectedFile.name}</p>
+                <p>Selected file: {selectedFile.name}</p>
                 <img className='imgReview' src={previewURL} alt="Preview" style={{ maxWidth: '100%' }} />
               </div>
             )}
@@ -134,4 +125,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default Cars;

@@ -42,7 +42,7 @@ class Details extends Component {
                                                 {/* Author*/}
                                                 <p className="lead">
                                                     Tác giả:
-                                                    <a href="#"> Anh Duy</a>
+                                                    <a href="#!"> Anh Duy</a>
                                                 </p>
                                                 <hr />
                                                 {/* Date and time*/}

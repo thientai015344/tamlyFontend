@@ -5,7 +5,6 @@ import avatagu from "./profile.png"
 import axios from "axios";
 import socketIOClient from "socket.io-client";
 
-
 export default function ChatU() {
   const socketURL = process.env.SOCKET;
 
@@ -32,32 +31,26 @@ export default function ChatU() {
   };
 
   useEffect(() => {
-    getAlluserChat();
     socketRe.current = socketIOClient.connect(socketURL)
     socketRe.current.on('getId', data => {
       setId(data);
     });
   
     socketRe.current.on('sendDataServer', dataGot => {
-      console.log(dataGot)
-
-      setMess(oldMsgs => {
-        if (!Array.isArray(oldMsgs)) {
-          oldMsgs = []; // Khởi tạo oldMsgs là một mảng rỗng nếu nó không phải là một mảng
-        }
-        getAlluserChat();
-        return [...oldMsgs, dataGot.data];
-      });
+      setMess(oldMsgs => [...oldMsgs, dataGot.data]);
     });
+    handleClick()
 
     return () => {
       socketRe.current.disconnect();
     };
-  
+
+    getAlluserChat();
   }, []);
 
 
   const getAlluserChat = async () => {
+  
     try {
       const response = await axios.get("/api/get-all-chat", { params: {id: Idadmin}});
       const data = response.data.user.reverse();
@@ -69,20 +62,29 @@ export default function ChatU() {
        if(!arrId.includes(item.incoming_msg_id) && item.incoming_msg_id !== Idadmin.toString()&& item.incoming_msg_id !== null){
         arrId.push(item.incoming_msg_id)
         listtexxt.push(item)
+
+
        }
        else if(!arrId.includes(item.outcoming_msg_id) && item.outcoming_msg_id !== Idadmin.toString()&& item.outcoming_msg_id !== null){
             arrId.push(item.outcoming_msg_id)
             listtexxt.push(item)
        }else{
         console.log("hehe")
-       }    
+       }
+     
       }
+      console.log(arrId)
+      console.log(listtexxt)
+
       setlistIduser(arrId)
       setlistuser(listtexxt)
+
+ 
       setMess(data.user)
     } catch (err) {
       console.log(err);
-    } 
+    }
+  
   };
 
   return (
